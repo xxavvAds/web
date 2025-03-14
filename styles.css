@@ -1,11 +1,11 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&family=Wix+Madefor+Display:wght@600;700;800&display=swap');
 
 /* General Styles */
 body {
     margin: 0;
-    font-family: 'Roboto', Arial, sans-serif;
-    background-color: #121212;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #0a0a0a;
     color: #ffffff;
     line-height: 1.6;
 }
@@ -23,23 +23,31 @@ a:hover {
 
 /* Navigation */
 header {
-    background-color: #1c1c1c;
-    padding: 1rem 0;
+    background-color: rgba(10, 10, 10, 0.95);
+    padding: 1.5rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem;
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
+    font-family: 'Wix MadeFor Display', sans-serif;
+    font-weight: 800;
+    font-size: 1.8rem;
+    background: linear-gradient(45deg, #00f2fe, #4facfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .nav-links {
@@ -54,77 +62,116 @@ nav {
 }
 
 .nav-links a {
+    color: #fff;
+    font-weight: 500;
+    position: relative;
     font-size: 1rem;
-    font-weight: 600;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: linear-gradient(45deg, #00f2fe, #4facfe);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 /* Hero Section */
 .hero-section {
-    text-align: center;
-    padding: 4rem 2rem;
-    background: linear-gradient(to right, #000428, #004e92);
-    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #0a0a0a, #1a1a1a, #2a2a2a, #1a1a1a);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    padding: 0 2rem;
+    position: relative;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .hero-section h1 {
-    font-size: 2.5rem;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
-    margin-bottom: 1rem;
+    font-family: 'Wix MadeFor Display', sans-serif;
+    font-weight: 800;
+    font-size: 4.5rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, #00f2fe, #4facfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero-section p {
-    font-size: 1.2rem;
-    font-family: 'Roboto', sans-serif;
-    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
 }
 
 .cta-button {
     display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background-color: #1e90ff;
-    color: #ffffff;
-    border-radius: 5px;
-    text-transform: uppercase;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(45deg, #00f2fe, #4facfe);
+    color: #fff;
+    border-radius: 50px;
     font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);
+    text-transform: uppercase;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .cta-button:hover {
-    background-color: #1c86ee;
-    transform: scale(1.05);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 242, 254, 0.4);
+    text-decoration: none;
 }
 
 /* Content Sections */
 .content-section {
-    padding: 4rem 2rem;
-    max-width: 1200px;
+    padding: 8rem 2rem;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
 .content-section h2 {
+    font-family: 'Wix MadeFor Display', sans-serif;
+    font-weight: 800;
+    font-size: 3rem;
     text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
+    margin-bottom: 3rem;
+    background: linear-gradient(45deg, #00f2fe, #4facfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .service-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .card {
-    background-color: #1c1c1c;
-    border: 1px solid #333;
-    border-radius: 5px;
-    padding: 2rem;
+    background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 3rem;
     flex: 1 1 calc(33.333% - 1rem);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
 }
 
 .card:hover {
@@ -134,23 +181,28 @@ nav {
 
 .card h3 {
     margin-top: 0;
-    color: #1e90ff;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
+    font-family: 'Wix MadeFor Display', sans-serif;
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
 }
 
 .card p {
-    color: #cccccc;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    line-height: 1.8;
     font-family: 'Roboto', sans-serif;
 }
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 2rem 0;
-    background-color: #1c1c1c;
+    padding: 3rem 0;
+    background-color: #0a0a0a;
     color: #777;
     font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Responsive Design */
@@ -175,5 +227,13 @@ footer {
 
     .card {
         flex: 1 1 100%;
+    }
+
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+
+    .hero-section p {
+        font-size: 1.2rem;
     }
 }
